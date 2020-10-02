@@ -15,14 +15,7 @@ public class Main {
                 // Removes words with less than five letters
                 if (line.length() < 5) continue;
 
-                if (line.length() == 5) {
-                    fs.addWord(line);
-
-                } else {
-                    if (line.length() > 7) line = "TOO HECKIN LONG";
-
-                    fs.addWord(line);
-                }
+                fs.addWord(line);
 
             }
 

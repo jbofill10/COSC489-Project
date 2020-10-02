@@ -17,8 +17,7 @@ public class FileSorter {
             this.lengthOfFive.add(word);
 
         } else {
-            if (word.length() > 7) word = "TOO HECKIN LONG";
-                this.otherWords.add(word);
+            this.otherWords.add(word);
         }
     }
 
@@ -54,13 +53,18 @@ public class FileSorter {
      * @throws IOException
      */
     private void writeOutList(ArrayList<String> list, BufferedWriter writer) throws IOException {
+        String word = "";
         for (int i = 0; i < list.size(); i++){
+            if (list.get(i).length() > 7) word = "TOO HECKIN LONG";
+            else
+                word = list.get(i);
+
             if(i == list.size() - 1){
-                writer.write(list.get(i));
-                System.out.println(list.get(i));
+                writer.write(word);
+
                 continue;
             }
-            writer.write(list.get(i));
+            writer.write(word);
             writer.write("\n");
         }
     }
